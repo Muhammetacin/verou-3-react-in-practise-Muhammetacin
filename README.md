@@ -1,3 +1,7 @@
+# Ecommerce app with React
+
+I am going to create a working bit of an ecommerce (webshop) app. What I will try to implement: show products, add to cart, show cart, show product page
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
