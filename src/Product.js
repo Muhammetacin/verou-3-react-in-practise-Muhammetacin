@@ -4,7 +4,7 @@ import { StarIcon } from "@chakra-ui/icons";
 
 const Product = ({ product }) => {
   return (
-    <div className="flex flex-grow-0 items-stretch mx-auto">
+    <div className="flex flex-grow-0 items-stretch">
       {product ? (
         <Box w="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
           <Image
