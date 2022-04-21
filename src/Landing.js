@@ -15,13 +15,13 @@ const Landing = () => {
       <div className="mr-8">
         <h1 className="text-center text-4xl font-bold">Most popular</h1>
         <div className="flex justify-center mt-4">
-          <Product product={mostPopularProduct} />
+          <Product product={mostPopularProduct} loaded={true} />
         </div>
       </div>
       <div className="ml-8">
         <h1 className="text-center text-4xl font-bold">Most liked</h1>
         <div className="flex justify-center mt-4">
-          <Product product={mostLikedProduct} />
+          <Product product={mostLikedProduct} loaded={true} />
         </div>
       </div>
     </div>

@@ -23,7 +23,6 @@ const Products = () => {
     const filteredCategory = products.filter(
       (product) => product.category === value
     );
-    console.log(filteredCategory);
     setProducts(filteredCategory);
   };
 

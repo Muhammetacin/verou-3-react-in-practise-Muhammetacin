@@ -11,9 +11,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="products" element={<Products />}></Route>
-        {/* <Route path="services"></Route>
-        <Route path="pricing"></Route>
-        <Route path="contact"></Route> */}
       </Routes>
     </div>
   );
