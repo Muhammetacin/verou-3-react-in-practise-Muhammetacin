@@ -13,10 +13,8 @@ const Products = () => {
     //   .then((data) => {
     //     setProducts(data);
     //   });
-    if (products.length === 0) {
-      setProducts(productsData);
-    }
-  }, [products]);
+    setProducts(productsData);
+  }, [value]);
 
   const setProductsFilter = () => {
     const filteredCategory = products.filter(
