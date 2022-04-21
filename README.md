@@ -1,6 +1,8 @@
 # Ecommerce app with React
 
-I am going to create a working bit of an ecommerce (webshop) app. What I will try to implement: show products, add to cart, show cart, show product page
+I am going to create a working bit of an ecommerce (webshop) app. What I will try to implement: show products, add to cart, show cart, show product page.
+
+Things I want to implement: cart in navbar, order products, skeleton while products are being loaded, most popular product on main page based on # reviews
 
 # Getting Started with Create React App
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Badge } from "@chakra-ui/react";
+import { Box, Image, Badge, Skeleton } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 
 const Product = ({ product }) => {
@@ -66,7 +66,63 @@ const Product = ({ product }) => {
           </Box>
         </Box>
       ) : (
-        "Loading..."
+        <Box w="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
+          <Skeleton boxSize="64" objectFit="contain" p="4" m="auto" />
+
+          <Box p="4">
+            <Box display="flex" alignItems="baseline">
+              <Skeleton borderRadius="full" px="2" colorScheme="teal">
+                New
+              </Skeleton>
+              <Box
+                color="gray.500"
+                fontWeight="semibold"
+                letterSpacing="wide"
+                fontSize="xs"
+                textTransform="uppercase"
+                ml="2"
+              >
+                <Skeleton borderRadius="full">{product.category}</Skeleton>
+              </Box>
+            </Box>
+
+            <Skeleton
+              borderRadius="full"
+              mt="1"
+              fontWeight="semibold"
+              as="h4"
+              lineHeight="tight"
+              isTruncated
+            >
+              {product.title}
+            </Skeleton>
+
+            <Skeleton borderRadius="full" my="1" w="20">
+              <Box as="span" color="gray.600" fontSize="sm">
+                &euro;
+              </Box>
+              {product.price}
+            </Skeleton>
+
+            <Box display="flex" mt="2" alignItems="center">
+              <Skeleton borderRadius="full">
+                {Array(5)
+                  .fill("")
+                  .map((_, i) => (
+                    <StarIcon
+                      key={i}
+                      color={i < product.rating.rate ? "teal.500" : "gray.300"}
+                    />
+                  ))}
+              </Skeleton>
+              <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                <Skeleton borderRadius="full">
+                  {product.rating.count} reviews
+                </Skeleton>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       )}
     </div>
   );
