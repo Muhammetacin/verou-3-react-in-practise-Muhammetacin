@@ -2,10 +2,10 @@ import React from "react";
 import { Box, Image, Badge, Skeleton } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 
-const Product = ({ product }) => {
+const Product = ({ product, loaded }) => {
   return (
     <div className="flex flex-grow-0 items-stretch">
-      {product ? (
+      {loaded ? (
         <Box w="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
           <Image
             boxSize="64"

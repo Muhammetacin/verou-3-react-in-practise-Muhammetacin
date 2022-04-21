@@ -6,14 +6,17 @@ import { productsData } from "./data";
 const Products = () => {
   const [products, setProducts] = useState(productsData);
   const [value, setValue] = useState();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // fetch("https://fakestoreapi.com/products")
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setProducts(data);
-    //   });
-    setProducts(productsData);
+    setIsLoaded(false);
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setIsLoaded(true);
+        setProducts(data);
+      });
+    // setProducts(productsData);
   }, [value]);
 
   const setProductsFilter = () => {
@@ -46,7 +49,7 @@ const Products = () => {
 
       <div className="container grid grid-cols-4 my-8 mx-auto">
         {products.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product.id} product={product} loaded={isLoaded} />
         ))}
       </div>
     </div>

@@ -3,14 +3,26 @@ import { productsData } from "./data";
 import Product from "./Product";
 
 const Landing = () => {
-  const product = productsData.reduce((prevProd, prod) =>
+  const mostPopularProduct = productsData.reduce((prevProd, prod) =>
     prod.rating.count > prevProd.rating.count ? prod : prevProd
   );
+
+  const mostLikedProduct = productsData.reduce((prevProd, prod) =>
+    prod.rating.rate > prevProd.rating.rate ? prod : prevProd
+  );
   return (
-    <div className="py-8">
-      <h1 className="text-center text-5xl font-bold">Most popular product</h1>
-      <div className="flex justify-center mt-10">
-        <Product product={product} />
+    <div className="flex flex-row justify-center py-8">
+      <div className="mr-8">
+        <h1 className="text-center text-4xl font-bold">Most popular</h1>
+        <div className="flex justify-center mt-4">
+          <Product product={mostPopularProduct} />
+        </div>
+      </div>
+      <div className="ml-8">
+        <h1 className="text-center text-4xl font-bold">Most liked</h1>
+        <div className="flex justify-center mt-4">
+          <Product product={mostLikedProduct} />
+        </div>
       </div>
     </div>
   );
