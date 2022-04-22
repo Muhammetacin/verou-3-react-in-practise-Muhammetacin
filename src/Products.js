@@ -5,7 +5,7 @@ import { productsData } from "./data";
 
 const Products = () => {
   const [products, setProducts] = useState(productsData);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("all");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -20,6 +20,9 @@ const Products = () => {
   }, [value]);
 
   const setProductsFilter = () => {
+    if (value === "all") {
+      return;
+    }
     const filteredCategory = products.filter(
       (product) => product.category === value
     );
@@ -36,6 +39,7 @@ const Products = () => {
         className="container mx-auto flex justify-center mt-8"
       >
         <Stack direction="row">
+          <Radio value="all">All</Radio>
           <Radio value="men's clothing">Men's clothing</Radio>
           <Radio value="women's clothing">Women's clothing</Radio>
           <Radio value="jewelery">Jewelery</Radio>
