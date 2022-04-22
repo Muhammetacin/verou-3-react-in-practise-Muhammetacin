@@ -12,7 +12,7 @@ import CartItem from "./CartItem";
 
 const CartDrawer = ({ isOpen, onClose }) => {
   return (
-    <Drawer onClose={onClose} isOpen={isOpen} size="sm">
+    <Drawer onClose={onClose} isOpen={isOpen} size="md">
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
