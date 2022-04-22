@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Badge, Skeleton } from "@chakra-ui/react";
+import { Box, Image, Badge, Skeleton, Button } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 
 const Product = ({ product, loaded }) => {
@@ -63,6 +63,10 @@ const Product = ({ product, loaded }) => {
                 {product.rating.count} reviews
               </Box>
             </Box>
+
+            <Button mt="4">
+              Add to cart
+            </Button>
           </Box>
         </Box>
       ) : (

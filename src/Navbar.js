@@ -2,8 +2,16 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Center, Circle, Divider, Icon } from "@chakra-ui/react";
 import { MdShoppingCart } from "react-icons/md";
+import CartDrawer from "./CartDrawer";
+import { useDisclosure } from "@chakra-ui/react";
 
 const Navbar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleClick = () => {
+    onOpen();
+  };
+
   return (
     <nav className="bg-slate-100 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -78,12 +86,15 @@ const Navbar = () => {
               <Divider orientation="vertical" />
             </Center>
             <li>
-              <Circle size="8" bg="#319795" color="white">
-                <Icon as={MdShoppingCart} boxSize="4" />
-              </Circle>
+              <button className="rounded-full" onClick={handleClick}>
+                <Circle size="8" bg="#319795" color="white">
+                  <Icon as={MdShoppingCart} boxSize="4" />
+                </Circle>
+              </button>
             </li>
           </ul>
         </div>
+        <CartDrawer isOpen={isOpen} onClose={onClose} />
       </div>
     </nav>
   );
