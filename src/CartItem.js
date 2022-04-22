@@ -29,9 +29,9 @@ const CartItem = () => {
               &euro;
             </Box>
             49.99
-            <Box>
-              <CartInput />
-            </Box>
+          </Box>
+          <Box>
+            <CartInput />
           </Box>
         </VStack>
       </HStack>

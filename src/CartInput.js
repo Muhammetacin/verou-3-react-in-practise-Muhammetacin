@@ -17,9 +17,9 @@ const CartInput = () => {
 
   return (
     <HStack w="150px">
-      <Button {...inc}>+</Button>
-      <Input {...input} />
       <Button {...dec}>-</Button>
+      <Input {...input} />
+      <Button {...inc}>+</Button>
     </HStack>
   );
 };
